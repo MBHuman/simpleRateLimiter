@@ -8,11 +8,11 @@ import (
 )
 
 const (
-	RATE_LIMIT = 5
+	RATE_LIMIT = 20
 )
 
 func main() {
-	limiter := ratelimiter.NewLimiterV1()
+	limiter := ratelimiter.NewLimiterV1(10)
 
 	ch := make(chan interface{}, 100)
 	var wg sync.WaitGroup
